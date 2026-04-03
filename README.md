@@ -1,6 +1,6 @@
 # VLESS + REALITY Proxy Setup Guide
 
-This guide provides step-by-step instructions for deploying a stealthy proxy server using Xray-core (via the 3x-ui panel) with the VLESS + REALITY protocol. This setup is specifically designed to bypass advanced Deep Packet Inspection (DPI) and active probing, such as China's Great Firewall (GFW), without interfering with other services.
+This guide provides step-by-step instructions for deploying a stealthy proxy server using [Xray-core](https://github.com/XTLS/Xray-core) (via the [3x-ui panel](https://github.com/MHSanaei/3x-ui)) with the VLESS + REALITY protocol. This setup is specifically designed to bypass advanced Deep Packet Inspection (DPI) and active probing, such as China's Great Firewall (GFW), without interfering with other services.
 
 ## Table of Contents
 
@@ -128,12 +128,12 @@ If you want to connect a laptop or a friend's device, do **not** create a new in
 
 ## Setting up the Happ App (Client Side)
 
-Happ natively supports Xray-core and VLESS + REALITY.
+[Happ](https://www.happ.su/main) natively supports Xray-core and VLESS + REALITY.
 
 ### Step 1: Import the Server
 
 1. Copy the `vless://` link from the 3x-ui panel to your clipboard.
-2. Open the Happ app.
+2. Open the [Happ app](https://www.happ.su/main).
 3. Tap the **Add (+)** button in the top right corner.
 4. Select **Import from Clipboard** (or scan the QR code if using a separate screen). Happ will auto-fill all REALITY parameters.
 
@@ -302,3 +302,13 @@ tls:
     ```bash
     docker compose up -d
     ```
+
+---
+
+## Resources
+
+| Resource | Link |
+|---|---|
+| Happ Client App | [happ.su/main](https://www.happ.su/main) |
+| Xray-core Repository | [github.com/XTLS/Xray-core](https://github.com/XTLS/Xray-core) |
+| 3x-ui Panel Repository | [github.com/MHSanaei/3x-ui](https://github.com/MHSanaei/3x-ui) |
