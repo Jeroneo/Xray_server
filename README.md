@@ -1,6 +1,6 @@
 # VLESS + REALITY Proxy Setup Guide
 
-This guide provides step-by-step instructions for deploying a stealthy proxy server using Xray-core (via the 3x-ui panel) with the VLESS + REALITY protocol. This setup is specifically designed to bypass advanced Deep Packet Inspection (DPI) and active probing, such as China's Great Firewall (GFW), without interfering with other services like Minecraft.
+This guide provides step-by-step instructions for deploying a stealthy proxy server using Xray-core (via the 3x-ui panel) with the VLESS + REALITY protocol. This setup is specifically designed to bypass advanced Deep Packet Inspection (DPI) and active probing, such as China's Great Firewall (GFW), without interfering with other services.
 
 ## Table of Contents
 
