@@ -1,0 +1,13 @@
+services:
+  3x-ui:
+    image: ghcr.io/mhsanaei/3x-ui:latest
+    container_name: 3x-ui
+    restart: unless-stopped
+    ports:
+      - "2053:2053"  # Management Panel port (Access via http://YOUR_IP:2053)
+      - "443:443"    # Xray Proxy Port (Crucial for VLESS + REALITY)
+      - "80:80"      # Optional: Good to have open for some fallback configurations
+    volumes:
+      - ./3x-ui-db:/etc/x-ui/  # Mounts the database so your settings survive restarts
+    environment:
+      - TZ=Asia/Shanghai       # Sets the correct timezone for your traffic logs

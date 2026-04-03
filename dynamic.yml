@@ -1,0 +1,43 @@
+http:
+  middlewares:
+    # Middleware to automatically redirect HTTP to HTTPS
+    redirect-to-https:
+      redirectScheme:
+        scheme: https
+        permanent: true
+
+    # Security headers to protect your 3x-ui panel from basic web attacks
+    secure-headers:
+      headers:
+        sslRedirect: true
+        forceSTSHeader: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 31536000
+        contentTypeNosniff: true
+        browserXssFilter: true
+        customFrameOptionsValue: SAMEORIGIN
+        customResponseHeaders:
+          X-Robots-Tag: "noindex, nofollow" # Hides your panel from Google search
+
+  # Applies the HTTP->HTTPS redirect to all traffic coming in on port 80
+  routers:
+    http-catchall:
+      rule: "HostRegexp(`{host:.+}`)"
+      entryPoints:
+        - "web"
+      middlewares:
+        - "redirect-to-https"
+      service: "noop@internal"
+
+tls:
+  options:
+    default:
+      minVersion: VersionTLS12
+      cipherSuites:
+        - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
+        - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
